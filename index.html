@@ -77,7 +77,7 @@
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                     <a href="#reservar" data-qty="1" class="js-reservar w-full sm:w-auto px-8 py-4 bg-sunset text-white font-semibold rounded hover:bg-sunset-dark transition-all shadow-lg text-center">
-                        Reservar mi ejemplar · <span data-eur="22">22 €</span>
+                        Reservar mi ejemplar · <span data-precio="ejemplar">90 ₪</span>
                     </a>
                     <a href="#ediciones-especiales" class="w-full sm:w-auto px-8 py-4 bg-transparent border border-navy text-navy font-medium rounded hover:bg-navy hover:text-white transition-all text-center">
                         Ediciones para comunidades
@@ -199,23 +199,23 @@
                         <i class="ph ph-stack text-3xl text-sunset"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-semibold mb-2">Compra en bloque</h3>
-                    <p class="text-gray-400 mb-8 font-light">Descuentos escalonados sobre el PVP de <span data-eur="22">22 €</span>.</p>
+                    <p class="text-gray-400 mb-8 font-light">Descuentos escalonados sobre el PVP de <span data-precio="ejemplar">90 ₪</span>.</p>
                     <ul class="space-y-4 mb-8 flex-grow">
                         <li class="flex justify-between items-center border-b border-white/10 pb-2 gap-4">
-                            <span class="text-gray-300">50 ejemplares <span class="text-gray-500 whitespace-nowrap">(−25 %)</span></span>
-                            <span class="font-semibold text-sunset-light whitespace-nowrap"><span data-eur="16.5">16,50 €</span> / ud.</span>
+                            <span class="text-gray-300">50 ejemplares <span class="text-gray-500 whitespace-nowrap">(−<span data-pct="0">25</span> %)</span></span>
+                            <span class="font-semibold text-sunset-light whitespace-nowrap"><span data-precio="t0">16,50 €</span> / ud.</span>
                         </li>
                         <li class="flex justify-between items-center border-b border-white/10 pb-2 gap-4">
-                            <span class="text-gray-300">51 a 150 <span class="text-gray-500 whitespace-nowrap">(−30 %)</span></span>
-                            <span class="font-semibold text-sunset-light whitespace-nowrap"><span data-eur="15.4">15,40 €</span> / ud.</span>
+                            <span class="text-gray-300">51 a 150 <span class="text-gray-500 whitespace-nowrap">(−<span data-pct="1">30</span> %)</span></span>
+                            <span class="font-semibold text-sunset-light whitespace-nowrap"><span data-precio="t1">15,40 €</span> / ud.</span>
                         </li>
                         <li class="flex justify-between items-center border-b border-white/10 pb-2 gap-4">
-                            <span class="text-gray-300">151 a 300 <span class="text-gray-500 whitespace-nowrap">(−35 %)</span></span>
-                            <span class="font-semibold text-sunset-light whitespace-nowrap"><span data-eur="14.3">14,30 €</span> / ud.</span>
+                            <span class="text-gray-300">151 a 300 <span class="text-gray-500 whitespace-nowrap">(−<span data-pct="2">35</span> %)</span></span>
+                            <span class="font-semibold text-sunset-light whitespace-nowrap"><span data-precio="t2">14,30 €</span> / ud.</span>
                         </li>
                         <li class="flex justify-between items-center pb-2 gap-4">
-                            <span class="text-gray-300">301 a 500 <span class="text-gray-500 whitespace-nowrap">(−40 %)</span></span>
-                            <span class="font-semibold text-sunset-light whitespace-nowrap"><span data-eur="13.2">13,20 €</span> / ud.</span>
+                            <span class="text-gray-300">301 a 500 <span class="text-gray-500 whitespace-nowrap">(−<span data-pct="3">40</span> %)</span></span>
+                            <span class="font-semibold text-sunset-light whitespace-nowrap"><span data-precio="t3">13,20 €</span> / ud.</span>
                         </li>
                     </ul>
                     <a href="#reservar" data-qty="50" class="js-reservar block text-center px-6 py-3 border border-sunset text-sunset-light font-medium rounded hover:bg-sunset hover:text-white transition-colors">Reservar en bloque</a>
@@ -237,11 +237,11 @@
                     <div class="bg-navy/50 rounded-lg border border-white/5 divide-y divide-white/10 mb-6">
                         <div class="flex justify-between items-center p-5">
                             <span class="text-gray-300 font-medium">250 ejemplares</span>
-                            <span class="font-bold text-xl" data-eur="4500">4.500 €</span>
+                            <span class="font-bold text-xl" data-precio="pers250">4.500 €</span>
                         </div>
                         <div class="flex justify-between items-center p-5">
                             <span class="text-gray-300 font-medium">500 ejemplares</span>
-                            <span class="font-bold text-xl" data-eur="7500">7.500 €</span>
+                            <span class="font-bold text-xl" data-precio="pers500">7.500 €</span>
                         </div>
                     </div>
                     <a href="#reservar" data-mode="pers250" class="js-reservar block text-center px-6 py-3 bg-sunset text-white font-semibold rounded hover:bg-sunset-dark transition-colors">Solicitar edición personalizada</a>
@@ -269,9 +269,9 @@
                                     <i class="ph ph-currency-circle-dollar text-sunset text-base"></i>
                                     <span class="sr-only">Moneda</span>
                                     <select id="moneda" class="bg-navy border border-white/20 rounded px-2 py-1 text-white text-xs focus:border-sunset outline-none cursor-pointer" aria-label="Moneda">
+                                        <option value="ILS">₪ ILS</option>
                                         <option value="EUR">€ EUR</option>
                                         <option value="USD">$ USD</option>
-                                        <option value="ILS">₪ ILS</option>
                                         <option value="GBP">£ GBP</option>
                                         <option value="ARS">$ ARS</option>
                                         <option value="MXN">$ MXN</option>
@@ -287,9 +287,9 @@
                             </div>
                             <div class="flex justify-between text-sm mb-2"><span class="text-gray-300">Modalidad</span><span id="sum-mode" class="text-right ml-4">Edición estándar</span></div>
                             <div class="flex justify-between text-sm mb-2"><span class="text-gray-300">Ejemplares</span><span id="sum-qty">1</span></div>
-                            <div class="flex justify-between text-sm mb-4"><span class="text-gray-300">Precio por ejemplar</span><span id="sum-unit">22,00 €</span></div>
+                            <div class="flex justify-between text-sm mb-4"><span class="text-gray-300">Precio por ejemplar</span><span id="sum-unit">90,00 ₪</span></div>
                             <div class="flex justify-between items-baseline border-t border-white/10 pt-4">
-                                <span class="text-gray-300">Total</span><span id="sum-total" class="font-serif text-3xl text-sunset-light">22,00 €</span>
+                                <span class="text-gray-300">Total</span><span id="sum-total" class="font-serif text-3xl text-sunset-light">90,00 ₪</span>
                             </div>
                             <p id="sum-note" class="text-xs text-gray-400 mt-3">Gastos de envío no incluidos.</p>
                             <p id="fx-note" class="hidden text-xs text-gray-400 mt-2 border-t border-white/10 pt-2"></p>
@@ -307,8 +307,8 @@
                             <label for="modalidad" class="block text-sm font-medium text-gray-700">Modalidad</label>
                             <select id="modalidad" name="modalidad" class="field text-gray-700">
                                 <option value="std">Edición estándar (ejemplares sueltos o en bloque)</option>
-                                <option value="pers250">Edición especial personalizada · 250 ejemplares · 4.500 €</option>
-                                <option value="pers500">Edición especial personalizada · 500 ejemplares · 7.500 €</option>
+                                <option value="pers250">Edición especial personalizada · 250 ejemplares</option>
+                                <option value="pers500">Edición especial personalizada · 500 ejemplares</option>
                             </select>
                         </div>
 
@@ -394,31 +394,50 @@
         };
         /* ========================================================= */
 
-        const PVP = 22;
-        const TRAMOS = [ // [desde, hasta, precio unitario, descuento]
-            [50, 50, 16.50, 25],
-            [51, 150, 15.40, 30],
-            [151, 300, 14.30, 35],
-            [301, 500, 13.20, 40]
-        ];
-        const PERSONALIZADA = {
-            pers250: { qty: 250, total: 4500, label: 'Edición personalizada (250 ejemplares)' },
-            pers500: { qty: 500, total: 7500, label: 'Edición personalizada (500 ejemplares)' }
+        /* ======================= PRECIOS =======================
+           Para cambiar un precio, cambia SOLO estos valores.
+           · moneda: moneda oficial en la que se cobra ('ILS', 'EUR', 'USD'…)
+           · ejemplar: precio de un ejemplar en esa moneda
+           · tramos: [desde, hasta, % de descuento] sobre el precio del ejemplar
+           · personalizada: precio total de cada tirada, con su propia moneda */
+        const PRECIOS = {
+            moneda: 'ILS',
+            ejemplar: 90,
+            tramos: [
+                [50, 50, 25],
+                [51, 150, 30],
+                [151, 300, 35],
+                [301, 500, 40]
+            ],
+            personalizada: {
+                moneda: 'EUR',
+                pers250: { qty: 250, total: 4500 },
+                pers500: { qty: 500, total: 7500 }
+            }
         };
-        let FMT;
-        try { FMT = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', useGrouping: 'always' }); FMT.format(1000); }
-        catch (e) { FMT = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }); }
-        const eur = n => FMT.format(n);
+        /* ========================================================= */
+
+        const BASE = PRECIOS.moneda;
+        const r2 = n => Math.round(n * 100) / 100;
+        const TRAMOS = PRECIOS.tramos.map(([a, b, pct]) => [a, b, r2(PRECIOS.ejemplar * (1 - pct / 100)), pct]);
+        const MIN_BLOQUE = TRAMOS.length ? TRAMOS[0][0] : Infinity;
+        const MAX_BLOQUE = TRAMOS.length ? TRAMOS[TRAMOS.length - 1][1] : Infinity;
+        const PERS_CUR = PRECIOS.personalizada.moneda || BASE;
+        const PERSONALIZADA = {
+            pers250: { ...PRECIOS.personalizada.pers250, label: 'Edición personalizada (250 ejemplares)' },
+            pers500: { ...PRECIOS.personalizada.pers500, label: 'Edición personalizada (500 ejemplares)' }
+        };
+        const NOMBRE_MONEDA = { ILS: 'shekels', EUR: 'euros', USD: 'dólares estadounidenses', GBP: 'libras', ARS: 'pesos argentinos', MXN: 'pesos mexicanos', CLP: 'pesos chilenos', COP: 'pesos colombianos', UYU: 'pesos uruguayos', PEN: 'soles', BRL: 'reales', CAD: 'dólares canadienses', CHF: 'francos suizos' };
         const num = n => { try { return n.toLocaleString('es-ES', { useGrouping: 'always' }); } catch (e) { return String(n); } };
 
-        /* ===== Monedas: los precios oficiales son en euros; el resto es una conversión orientativa ===== */
+        /* ===== Monedas: el precio oficial va en la moneda de arriba; el resto es una conversión orientativa ===== */
         const FX = { // 1 EUR = x. Valores de respaldo (1 nov 2026); se actualizan solos al cargar la página.
             EUR: 1, USD: 1.1166, ILS: 3.4944, GBP: 0.8340, ARS: 1716.64, MXN: 21.0104, CLP: 1102.87,
             COP: 3533.02, UYU: 44.7643, PEN: 3.8595, BRL: 6.0384, CAD: 1.5583, CHF: 0.9206
         };
         let fxFecha = '1 nov 2026';
-        let moneda = 'EUR';
-        try { const m = localStorage.getItem('rma-moneda'); if (m && FX[m]) moneda = m; } catch (e) {}
+        let moneda = FX[BASE] ? BASE : 'EUR';
+        try { const m = localStorage.getItem('rma-moneda-v2'); if (m && FX[m]) moneda = m; } catch (e) {}
         const fmtCache = {};
         function getFmt(cur, dec) {
             const k = cur + dec;
@@ -429,23 +448,39 @@
             }
             return fmtCache[k];
         }
-        function fmtMoneda(n, cur, corto) {
-            let v = n * FX[cur];
-            const dec = (FX[cur] >= 100 || (corto && (Number.isInteger(v) || v >= 1000))) ? 0 : 2;
-            let s = getFmt(cur, dec).format(v);
-            if (cur === 'EUR') return s;
-            if (s.includes('$') && !/[A-Z]{2}/.test(s)) s += ' ' + cur;
-            return '≈ ' + s;
+        function marcar(s, cur) { return (s.includes('$') && !/[A-Z]{2}/.test(s)) ? s + ' ' + cur : s; }
+        // Importe exacto en su moneda oficial
+        function oficial(n, cur, corto) {
+            cur = cur || BASE;
+            const dec = (corto && (Number.isInteger(n) || n >= 1000)) ? 0 : 2;
+            return marcar(getFmt(cur, dec).format(n), cur);
         }
-        const precio = n => fmtMoneda(n, moneda);
+        // n en la moneda «desde», mostrado en «hacia»: exacto si coinciden, aproximado si no
+        function fmtMoneda(n, desde, hacia, corto) {
+            if (desde === hacia) return oficial(n, hacia, corto);
+            const v = n / FX[desde] * FX[hacia];
+            const dec = (FX[hacia] / FX[desde] >= 100 || (corto && (Number.isInteger(v) || v >= 1000))) ? 0 : 2;
+            return '≈ ' + marcar(getFmt(hacia, dec).format(v), hacia);
+        }
+        const precio = (n, cur) => fmtMoneda(n, cur || BASE, moneda);
+        function valorPrecio(key) {
+            if (key === 'ejemplar') return [PRECIOS.ejemplar, BASE];
+            if (/^t\d+$/.test(key)) { const tr = TRAMOS[+key.slice(1)]; return tr ? [tr[2], BASE] : null; }
+            if (PERSONALIZADA[key]) return [PERSONALIZADA[key].total, PERS_CUR];
+            return null;
+        }
         function pintarEstaticos() {
-            document.querySelectorAll('[data-eur]').forEach(el => { el.textContent = fmtMoneda(parseFloat(el.dataset.eur), moneda, true); });
+            document.querySelectorAll('[data-precio]').forEach(el => {
+                const v = valorPrecio(el.dataset.precio);
+                if (v) el.textContent = fmtMoneda(v[0], v[1], moneda, true);
+            });
+            document.querySelectorAll('[data-pct]').forEach(el => { const tr = TRAMOS[+el.dataset.pct]; if (tr) el.textContent = tr[3]; });
             const nota = $('fx-note');
-            if (moneda === 'EUR') { nota.classList.add('hidden'); }
-            else {
-                nota.textContent = `Conversión orientativa (1 € ${fmtMoneda(1, moneda)} · ${fxFecha}). El precio oficial y el cobro son en euros.`;
-                nota.classList.remove('hidden');
-            }
+            const partes = [];
+            if (moneda !== BASE) partes.push(`Conversión orientativa (1 ${BASE} ${fmtMoneda(1, BASE, moneda)} · ${fxFecha}). El precio oficial y el cobro son en ${NOMBRE_MONEDA[BASE] || BASE}.`);
+            if (PERS_CUR !== BASE && moneda !== PERS_CUR) partes.push(`La edición personalizada se cotiza en ${NOMBRE_MONEDA[PERS_CUR] || PERS_CUR}.`);
+            nota.textContent = partes.join(' ');
+            nota.classList.toggle('hidden', !partes.length);
         }
         async function actualizarFX() {
             try {
@@ -454,7 +489,7 @@
                 clearTimeout(to);
                 const j = await res.json();
                 if (j && j.result === 'success' && j.rates) {
-                    Object.keys(FX).forEach(k => { if (typeof j.rates[k] === 'number' && j.rates[k] > 0) FX[k] = j.rates[k]; });
+                    Object.keys(FX).forEach(k => { if (k !== 'EUR' && typeof j.rates[k] === 'number' && j.rates[k] > 0) FX[k] = j.rates[k]; });
                     if (j.time_last_update_unix) fxFecha = new Date(j.time_last_update_unix * 1000).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' });
                     pintar();
                 }
@@ -471,16 +506,16 @@
             const mode = sel.value;
             if (PERSONALIZADA[mode]) {
                 const p = PERSONALIZADA[mode];
-                return { mode, modoTexto: p.label, qty: p.qty, unit: p.total / p.qty, total: p.total, nota: 'Incluye dedicatoria, introducción del rabino y logotipos. Envío no incluido.' };
+                return { mode, cur: PERS_CUR, modoTexto: p.label, qty: p.qty, unit: r2(p.total / p.qty), total: p.total, nota: 'Incluye dedicatoria, introducción del rabino y logotipos. Envío no incluido.' };
             }
             const q = Math.max(1, parseInt(qty.value, 10) || 1);
-            if (q > 500) return { mode, modoTexto: 'Compra en bloque', qty: q, unit: null, total: null, nota: 'Más de 500 ejemplares: le enviaremos un presupuesto a medida.' };
+            if (q > MAX_BLOQUE) return { mode, cur: BASE, modoTexto: 'Compra en bloque', qty: q, unit: null, total: null, nota: `Más de ${num(MAX_BLOQUE)} ejemplares: le enviaremos un presupuesto a medida.` };
             const t = TRAMOS.find(([a, b]) => q >= a && q <= b);
-            const unit = t ? t[2] : PVP;
+            const unit = t ? t[2] : PRECIOS.ejemplar;
             return {
-                mode, qty: q, unit, total: Math.round(unit * q * 100) / 100,
+                mode, cur: BASE, qty: q, unit, total: r2(unit * q),
                 modoTexto: q === 1 ? 'Ejemplar individual' : (t ? 'Compra en bloque' : 'Varios ejemplares'),
-                nota: t ? `Descuento del ${t[3]} % aplicado. Gastos de envío no incluidos.` : (q < 50 ? `Con ${50 - q} ejemplar${50 - q === 1 ? '' : 'es'} más accedería al 25 % de descuento. Envío no incluido.` : 'Gastos de envío no incluidos.')
+                nota: t ? `Descuento del ${t[3]} % aplicado. Gastos de envío no incluidos.` : (q < MIN_BLOQUE ? `Con ${MIN_BLOQUE - q} ejemplar${MIN_BLOQUE - q === 1 ? '' : 'es'} más accedería al ${TRAMOS[0][3]} % de descuento. Envío no incluido.` : 'Gastos de envío no incluidos.')
             };
         }
 
@@ -490,8 +525,8 @@
             const r = calcular();
             $('sum-mode').textContent = r.modoTexto;
             $('sum-qty').textContent = num(r.qty);
-            $('sum-unit').textContent = r.unit == null ? 'A consultar' : precio(r.unit);
-            $('sum-total').textContent = r.total == null ? 'A consultar' : precio(r.total);
+            $('sum-unit').textContent = r.unit == null ? 'A consultar' : precio(r.unit, r.cur);
+            $('sum-total').textContent = r.total == null ? 'A consultar' : precio(r.total, r.cur);
             $('sum-note').textContent = r.nota;
             pintarEstaticos();
         }
@@ -501,8 +536,8 @@
         const selMoneda = $('moneda');
         selMoneda.value = moneda;
         selMoneda.addEventListener('change', () => {
-            moneda = FX[selMoneda.value] ? selMoneda.value : 'EUR';
-            try { localStorage.setItem('rma-moneda', moneda); } catch (e) {}
+            moneda = FX[selMoneda.value] ? selMoneda.value : BASE;
+            try { localStorage.setItem('rma-moneda-v2', moneda); } catch (e) {}
             pintar();
         });
         qty.addEventListener('input', pintar);
@@ -543,7 +578,7 @@
             const r = calcular();
             const ref = referencia();
             const nombre = $('nombre').value.trim();
-            const resumen = `${num(r.qty)} ejemplar${r.qty === 1 ? '' : 'es'} · ${r.total == null ? 'precio a consultar' : eur(r.total)}`;
+            const resumen = `${num(r.qty)} ejemplar${r.qty === 1 ? '' : 'es'} · ${r.total == null ? 'precio a consultar' : oficial(r.total, r.cur)}`;
 
             // Bots: rellenan el campo oculto. Fingimos éxito sin enviar nada.
             if ($('honey').value) { exito(nombre, ref, resumen); return; }
@@ -556,9 +591,9 @@
                 'País': $('pais').value.trim() || '—',
                 'Modalidad': r.modoTexto,
                 'Ejemplares': r.qty,
-                'Precio por ejemplar': r.unit == null ? 'A consultar' : eur(r.unit),
-                'Total estimado (sin envío)': r.total == null ? 'A consultar' : eur(r.total),
-                'Moneda consultada': moneda === 'EUR' ? 'EUR' : `${moneda} (${r.total == null ? 'a consultar' : fmtMoneda(r.total, moneda)}, orientativo)`,
+                'Precio por ejemplar': r.unit == null ? 'A consultar' : oficial(r.unit, r.cur),
+                'Total estimado (sin envío)': r.total == null ? 'A consultar' : oficial(r.total, r.cur),
+                'Moneda consultada': moneda === r.cur ? moneda : `${moneda} (${r.total == null ? 'a consultar' : fmtMoneda(r.total, r.cur, moneda)}, orientativo)`,
                 'Fecha': new Date().toLocaleString('es-ES'),
                 '_subject': `Nueva reserva ${ref} · Recuerda mi alma · ${resumen}`,
                 '_template': 'table',

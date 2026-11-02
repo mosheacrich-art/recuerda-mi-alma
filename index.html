@@ -77,7 +77,7 @@
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                     <a href="#reservar" data-qty="1" class="js-reservar w-full sm:w-auto px-8 py-4 bg-sunset text-white font-semibold rounded hover:bg-sunset-dark transition-all shadow-lg text-center">
-                        Reservar mi ejemplar · <span data-precio="ejemplar">90 ₪</span>
+                        Reservar mi ejemplar · <span data-precio="ejemplar">22 €</span>
                     </a>
                     <a href="#ediciones-especiales" class="w-full sm:w-auto px-8 py-4 bg-transparent border border-navy text-navy font-medium rounded hover:bg-navy hover:text-white transition-all text-center">
                         Ediciones para comunidades
@@ -199,7 +199,7 @@
                         <i class="ph ph-stack text-3xl text-sunset"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-semibold mb-2">Compra en bloque</h3>
-                    <p class="text-gray-400 mb-8 font-light">Descuentos escalonados sobre el PVP de <span data-precio="ejemplar">90 ₪</span>.</p>
+                    <p class="text-gray-400 mb-8 font-light">Descuentos escalonados sobre el PVP de <span data-precio="ejemplar">22 €</span>.</p>
                     <ul class="space-y-4 mb-8 flex-grow">
                         <li class="flex justify-between items-center border-b border-white/10 pb-2 gap-4">
                             <span class="text-gray-300">50 ejemplares <span class="text-gray-500 whitespace-nowrap">(−<span data-pct="0">25</span> %)</span></span>
@@ -269,9 +269,9 @@
                                     <i class="ph ph-currency-circle-dollar text-sunset text-base"></i>
                                     <span class="sr-only">Moneda</span>
                                     <select id="moneda" class="bg-navy border border-white/20 rounded px-2 py-1 text-white text-xs focus:border-sunset outline-none cursor-pointer" aria-label="Moneda">
-                                        <option value="ILS">₪ ILS</option>
                                         <option value="EUR">€ EUR</option>
                                         <option value="USD">$ USD</option>
+                                        <option value="ILS">₪ ILS</option>
                                         <option value="GBP">£ GBP</option>
                                         <option value="ARS">$ ARS</option>
                                         <option value="MXN">$ MXN</option>
@@ -287,9 +287,9 @@
                             </div>
                             <div class="flex justify-between text-sm mb-2"><span class="text-gray-300">Modalidad</span><span id="sum-mode" class="text-right ml-4">Edición estándar</span></div>
                             <div class="flex justify-between text-sm mb-2"><span class="text-gray-300">Ejemplares</span><span id="sum-qty">1</span></div>
-                            <div class="flex justify-between text-sm mb-4"><span class="text-gray-300">Precio por ejemplar</span><span id="sum-unit">90,00 ₪</span></div>
+                            <div class="flex justify-between text-sm mb-4"><span class="text-gray-300">Precio por ejemplar</span><span id="sum-unit">22,00 €</span></div>
                             <div class="flex justify-between items-baseline border-t border-white/10 pt-4">
-                                <span class="text-gray-300">Total</span><span id="sum-total" class="font-serif text-3xl text-sunset-light">90,00 ₪</span>
+                                <span class="text-gray-300">Total</span><span id="sum-total" class="font-serif text-3xl text-sunset-light">22,00 €</span>
                             </div>
                             <p id="sum-note" class="text-xs text-gray-400 mt-3">Gastos de envío no incluidos.</p>
                             <p id="fx-note" class="hidden text-xs text-gray-400 mt-2 border-t border-white/10 pt-2"></p>
@@ -401,8 +401,8 @@
            · tramos: [desde, hasta, % de descuento] sobre el precio del ejemplar
            · personalizada: precio total de cada tirada, con su propia moneda */
         const PRECIOS = {
-            moneda: 'ILS',
-            ejemplar: 90,
+            moneda: 'EUR',
+            ejemplar: 22,
             tramos: [
                 [50, 50, 25],
                 [51, 150, 30],
@@ -437,7 +437,7 @@
         };
         let fxFecha = '1 nov 2026';
         let moneda = FX[BASE] ? BASE : 'EUR';
-        try { const m = localStorage.getItem('rma-moneda-v2'); if (m && FX[m]) moneda = m; } catch (e) {}
+        try { const m = localStorage.getItem('rma-moneda-v3'); if (m && FX[m]) moneda = m; } catch (e) {}
         const fmtCache = {};
         function getFmt(cur, dec) {
             const k = cur + dec;
@@ -537,7 +537,7 @@
         selMoneda.value = moneda;
         selMoneda.addEventListener('change', () => {
             moneda = FX[selMoneda.value] ? selMoneda.value : BASE;
-            try { localStorage.setItem('rma-moneda-v2', moneda); } catch (e) {}
+            try { localStorage.setItem('rma-moneda-v3', moneda); } catch (e) {}
             pintar();
         });
         qty.addEventListener('input', pintar);
